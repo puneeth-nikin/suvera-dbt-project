@@ -10626,3 +10626,249 @@ drop view if exists "dev"."main"."cleaned_patients__dbt_backup" cascade
 [0m15:04:26.732684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1085f64c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108913f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108913070>]}
 [0m15:04:26.733166 [debug] [MainThread]: Flushing usage events
 [0m15:04:27.096581 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:17:50.674385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a55d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108867610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108867750>]}
+
+
+============================== 15:17:50.687300 | 354f6e82-5704-4ed0-be5e-04b101062f16 ==============================
+[0m15:17:50.687300 [info ] [MainThread]: Running with dbt=1.10.1
+[0m15:17:50.688336 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/puneeth/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/Users/puneeth/Documents/suvera_dbt_project/suvera/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --select qa_flagged_patients', 'send_anonymous_usage_stats': 'True'}
+[0m15:17:51.089131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '354f6e82-5704-4ed0-be5e-04b101062f16', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d35220>]}
+[0m15:17:51.163827 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '354f6e82-5704-4ed0-be5e-04b101062f16', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10874f350>]}
+[0m15:17:51.192244 [info ] [MainThread]: Registered adapter: duckdb=1.9.3
+[0m15:17:51.329619 [debug] [MainThread]: checksum: 2c026f85d539c10c69b093157526ce33d0bf5533489eafb07fe5172434ec7740, vars: {}, profile: , target: , version: 1.10.1
+[0m15:17:51.586704 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m15:17:51.587386 [debug] [MainThread]: Partial parsing: added file: suvera://models/qa/qa_flagged_patients.sql
+[0m15:17:51.920024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '354f6e82-5704-4ed0-be5e-04b101062f16', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108fec350>]}
+[0m15:17:52.017837 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/puneeth/Documents/suvera_dbt_project/suvera/target/manifest.json
+[0m15:17:52.022688 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/puneeth/Documents/suvera_dbt_project/suvera/target/semantic_manifest.json
+[0m15:17:52.072224 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '354f6e82-5704-4ed0-be5e-04b101062f16', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b3ed50>]}
+[0m15:17:52.072936 [info ] [MainThread]: Found 7 models, 4 seeds, 16 data tests, 544 macros
+[0m15:17:52.073405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '354f6e82-5704-4ed0-be5e-04b101062f16', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1090f1390>]}
+[0m15:17:52.075722 [info ] [MainThread]: 
+[0m15:17:52.076188 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:17:52.076571 [info ] [MainThread]: 
+[0m15:17:52.077286 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m15:17:52.078741 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dev'
+[0m15:17:52.162813 [debug] [ThreadPool]: Using duckdb connection "list_dev"
+[0m15:17:52.163363 [debug] [ThreadPool]: On list_dev: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "suvera", "target_name": "dev", "connection_name": "list_dev"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dev"'
+    
+  
+  
+[0m15:17:52.163773 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:17:52.176482 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "suvera", "target_name": "dev", "connection_name": "list_dev"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dev"'
+    
+  
+  
+[0m15:17:52.176984 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m15:17:52.177913 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:17:52.178252 [debug] [MainThread]: Connection 'list_dev' was properly closed.
+[0m15:17:52.178578 [info ] [MainThread]: 
+[0m15:17:52.179085 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.10 seconds (0.10s).
+[0m15:17:52.179732 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Could not set lock on file "/Users/puneeth/Documents/suvera_dbt_project/suvera/dev.duckdb": Conflicting lock is held in /usr/local/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python (PID 23334) by user puneeth. See also https://duckdb.org/docs/stable/connect/concurrency
+[0m15:17:52.184021 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.6200035, "process_in_blocks": "0", "process_kernel_time": 0.646756, "process_mem_max_rss": "129445888", "process_out_blocks": "0", "process_user_time": 3.097304}
+[0m15:17:52.184795 [debug] [MainThread]: Command `dbt run` failed at 15:17:52.184643 after 1.62 seconds
+[0m15:17:52.185319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10904fe10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10870da90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092d4b90>]}
+[0m15:17:52.185906 [debug] [MainThread]: Flushing usage events
+[0m15:17:52.623930 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:18:08.815070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e25d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105bff610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105bff750>]}
+
+
+============================== 15:18:08.824185 | 30eca8c3-d4a3-4341-a40c-9beb569a8058 ==============================
+[0m15:18:08.824185 [info ] [MainThread]: Running with dbt=1.10.1
+[0m15:18:08.825207 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/puneeth/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/puneeth/Documents/suvera_dbt_project/suvera/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'invocation_command': 'dbt run --select qa_flagged_patients', 'send_anonymous_usage_stats': 'True'}
+[0m15:18:09.220895 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '30eca8c3-d4a3-4341-a40c-9beb569a8058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050d9220>]}
+[0m15:18:09.325971 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '30eca8c3-d4a3-4341-a40c-9beb569a8058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105aeb350>]}
+[0m15:18:09.349089 [info ] [MainThread]: Registered adapter: duckdb=1.9.3
+[0m15:18:09.500551 [debug] [MainThread]: checksum: 2c026f85d539c10c69b093157526ce33d0bf5533489eafb07fe5172434ec7740, vars: {}, profile: , target: , version: 1.10.1
+[0m15:18:09.806151 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:18:09.807151 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:18:09.885967 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '30eca8c3-d4a3-4341-a40c-9beb569a8058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105efb650>]}
+[0m15:18:10.008175 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/puneeth/Documents/suvera_dbt_project/suvera/target/manifest.json
+[0m15:18:10.011994 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/puneeth/Documents/suvera_dbt_project/suvera/target/semantic_manifest.json
+[0m15:18:10.054712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '30eca8c3-d4a3-4341-a40c-9beb569a8058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105eced50>]}
+[0m15:18:10.055527 [info ] [MainThread]: Found 7 models, 4 seeds, 16 data tests, 544 macros
+[0m15:18:10.056501 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '30eca8c3-d4a3-4341-a40c-9beb569a8058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062fd2b0>]}
+[0m15:18:10.059210 [info ] [MainThread]: 
+[0m15:18:10.060272 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:18:10.060838 [info ] [MainThread]: 
+[0m15:18:10.061590 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m15:18:10.062561 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dev'
+[0m15:18:10.138248 [debug] [ThreadPool]: Using duckdb connection "list_dev"
+[0m15:18:10.138904 [debug] [ThreadPool]: On list_dev: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "suvera", "target_name": "dev", "connection_name": "list_dev"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dev"'
+    
+  
+  
+[0m15:18:10.139372 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:18:10.161047 [debug] [ThreadPool]: SQL status: OK in 0.022 seconds
+[0m15:18:10.163118 [debug] [ThreadPool]: On list_dev: Close
+[0m15:18:10.164248 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now create_dev_main)
+[0m15:18:10.164992 [debug] [ThreadPool]: Creating schema "database: "dev"
+schema: "main"
+"
+[0m15:18:10.172499 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m15:18:10.172965 [debug] [ThreadPool]: On create_dev_main: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "suvera", "target_name": "dev", "connection_name": "create_dev_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dev'
+        and type='sqlite'
+    
+  
+[0m15:18:10.173315 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:18:10.174656 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m15:18:10.176238 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m15:18:10.176596 [debug] [ThreadPool]: On create_dev_main: BEGIN
+[0m15:18:10.177101 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:18:10.177424 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m15:18:10.177746 [debug] [ThreadPool]: On create_dev_main: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "suvera", "target_name": "dev", "connection_name": "create_dev_main"} */
+
+    
+    
+        create schema if not exists "dev"."main"
+    
+[0m15:18:10.178283 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:18:10.179215 [debug] [ThreadPool]: On create_dev_main: COMMIT
+[0m15:18:10.179562 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m15:18:10.179885 [debug] [ThreadPool]: On create_dev_main: COMMIT
+[0m15:18:10.180385 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:18:10.180813 [debug] [ThreadPool]: On create_dev_main: Close
+[0m15:18:10.187944 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dev_main, now list_dev_main)
+[0m15:18:10.197080 [debug] [ThreadPool]: Using duckdb connection "list_dev_main"
+[0m15:18:10.197988 [debug] [ThreadPool]: On list_dev_main: BEGIN
+[0m15:18:10.198673 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:18:10.199939 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m15:18:10.200326 [debug] [ThreadPool]: Using duckdb connection "list_dev_main"
+[0m15:18:10.200660 [debug] [ThreadPool]: On list_dev_main: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "suvera", "target_name": "dev", "connection_name": "list_dev_main"} */
+select
+      'dev' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dev'
+  
+[0m15:18:10.216589 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m15:18:10.218252 [debug] [ThreadPool]: On list_dev_main: ROLLBACK
+[0m15:18:10.221063 [debug] [ThreadPool]: Failed to rollback 'list_dev_main'
+[0m15:18:10.221538 [debug] [ThreadPool]: On list_dev_main: Close
+[0m15:18:10.225895 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '30eca8c3-d4a3-4341-a40c-9beb569a8058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062a7d40>]}
+[0m15:18:10.226647 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:18:10.227311 [debug] [MainThread]: On master: BEGIN
+[0m15:18:10.227637 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:18:10.228327 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m15:18:10.228673 [debug] [MainThread]: On master: COMMIT
+[0m15:18:10.229000 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:18:10.229308 [debug] [MainThread]: On master: COMMIT
+[0m15:18:10.229812 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:18:10.230498 [debug] [MainThread]: On master: Close
+[0m15:18:10.234432 [debug] [Thread-1 (]: Began running node model.suvera.qa_flagged_patients
+[0m15:18:10.235079 [info ] [Thread-1 (]: 1 of 1 START sql view model main.qa_flagged_patients ........................... [RUN]
+[0m15:18:10.235599 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dev_main, now model.suvera.qa_flagged_patients)
+[0m15:18:10.236018 [debug] [Thread-1 (]: Began compiling node model.suvera.qa_flagged_patients
+[0m15:18:10.244530 [debug] [Thread-1 (]: Writing injected SQL for node "model.suvera.qa_flagged_patients"
+[0m15:18:10.246610 [debug] [Thread-1 (]: Began executing node model.suvera.qa_flagged_patients
+[0m15:18:10.287359 [debug] [Thread-1 (]: Writing runtime sql for node "model.suvera.qa_flagged_patients"
+[0m15:18:10.288615 [debug] [Thread-1 (]: Using duckdb connection "model.suvera.qa_flagged_patients"
+[0m15:18:10.289074 [debug] [Thread-1 (]: On model.suvera.qa_flagged_patients: BEGIN
+[0m15:18:10.289456 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:18:10.290156 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m15:18:10.290563 [debug] [Thread-1 (]: Using duckdb connection "model.suvera.qa_flagged_patients"
+[0m15:18:10.290971 [debug] [Thread-1 (]: On model.suvera.qa_flagged_patients: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "suvera", "target_name": "dev", "node_id": "model.suvera.qa_flagged_patients"} */
+
+  
+  create view "dev"."main"."qa_flagged_patients__dbt_tmp" as (
+    with source as (
+    select *
+    from "dev"."main"."stg_patients"
+),
+
+deduplicated as (
+    select *
+    from (
+        select *,
+               row_number() over (
+                   partition by patient_id, practice_id
+                   order by registration_date desc
+               ) as row_num
+        from source
+    )
+),
+
+filtered_out as (
+    select *
+    from deduplicated
+    where row_num > 1
+       or try_cast(age as integer) not between 0 and 120
+)
+
+select * from filtered_out
+  );
+
+[0m15:18:10.292908 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m15:18:10.299510 [debug] [Thread-1 (]: Using duckdb connection "model.suvera.qa_flagged_patients"
+[0m15:18:10.299960 [debug] [Thread-1 (]: On model.suvera.qa_flagged_patients: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "suvera", "target_name": "dev", "node_id": "model.suvera.qa_flagged_patients"} */
+alter view "dev"."main"."qa_flagged_patients__dbt_tmp" rename to "qa_flagged_patients"
+[0m15:18:10.301133 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m15:18:10.315719 [debug] [Thread-1 (]: On model.suvera.qa_flagged_patients: COMMIT
+[0m15:18:10.316236 [debug] [Thread-1 (]: Using duckdb connection "model.suvera.qa_flagged_patients"
+[0m15:18:10.316625 [debug] [Thread-1 (]: On model.suvera.qa_flagged_patients: COMMIT
+[0m15:18:10.317971 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m15:18:10.323242 [debug] [Thread-1 (]: Using duckdb connection "model.suvera.qa_flagged_patients"
+[0m15:18:10.323695 [debug] [Thread-1 (]: On model.suvera.qa_flagged_patients: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "suvera", "target_name": "dev", "node_id": "model.suvera.qa_flagged_patients"} */
+drop view if exists "dev"."main"."qa_flagged_patients__dbt_backup" cascade
+[0m15:18:10.324444 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m15:18:10.326926 [debug] [Thread-1 (]: On model.suvera.qa_flagged_patients: Close
+[0m15:18:10.329411 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '30eca8c3-d4a3-4341-a40c-9beb569a8058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106551250>]}
+[0m15:18:10.330709 [info ] [Thread-1 (]: 1 of 1 OK created sql view model main.qa_flagged_patients ...................... [[32mOK[0m in 0.09s]
+[0m15:18:10.331623 [debug] [Thread-1 (]: Finished running node model.suvera.qa_flagged_patients
+[0m15:18:10.333321 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:18:10.333752 [debug] [MainThread]: On master: BEGIN
+[0m15:18:10.334077 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:18:10.334761 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m15:18:10.335282 [debug] [MainThread]: On master: COMMIT
+[0m15:18:10.335633 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:18:10.335954 [debug] [MainThread]: On master: COMMIT
+[0m15:18:10.336856 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:18:10.337383 [debug] [MainThread]: On master: Close
+[0m15:18:10.338103 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:18:10.339198 [debug] [MainThread]: Connection 'model.suvera.qa_flagged_patients' was properly closed.
+[0m15:18:10.340156 [info ] [MainThread]: 
+[0m15:18:10.340739 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.28 seconds (0.28s).
+[0m15:18:10.341797 [debug] [MainThread]: Command end result
+[0m15:18:10.377995 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/puneeth/Documents/suvera_dbt_project/suvera/target/manifest.json
+[0m15:18:10.380678 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/puneeth/Documents/suvera_dbt_project/suvera/target/semantic_manifest.json
+[0m15:18:10.388788 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/puneeth/Documents/suvera_dbt_project/suvera/target/run_results.json
+[0m15:18:10.389778 [info ] [MainThread]: 
+[0m15:18:10.390894 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:18:10.391633 [info ] [MainThread]: 
+[0m15:18:10.392124 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m15:18:10.395840 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.6891174, "process_in_blocks": "0", "process_kernel_time": 0.659712, "process_mem_max_rss": "134250496", "process_out_blocks": "0", "process_user_time": 3.265978}
+[0m15:18:10.396491 [debug] [MainThread]: Command `dbt run` succeeded at 15:18:10.396359 after 1.69 seconds
+[0m15:18:10.397241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062f64c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106673250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106673e30>]}
+[0m15:18:10.397795 [debug] [MainThread]: Flushing usage events
+[0m15:18:10.759963 [debug] [MainThread]: An error was encountered while trying to flush usage events
