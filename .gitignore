@@ -1,10 +1,7 @@
-# dbt artifacts
 dbt_packages/
 target/
 __pycache__/
-
-# Python venv
 venv/
-
-# OS/filesystem noise
 .DS_Store
+*.duckdb
+logs/
