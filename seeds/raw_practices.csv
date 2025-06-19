@@ -1,0 +1,6 @@
+id,practice_name,location,established_date,pcn
+1,"Hayes, Walker and Williams Clinic",Alvaradoberg,2024-02-09,2
+2,"Foster, West and Miller Clinic",Port Paul,2023-07-23,2
+3,Dominguez Ltd Clinic,East Howard,2023-09-23,1
+4,Meza-Smith Clinic,New John,2024-01-04,1
+999,Invalid Practice,Nowhere,2030-01-01,
