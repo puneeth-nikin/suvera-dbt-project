@@ -14,13 +14,13 @@ with deduplicated as (
 filtered as (
     select *
     from deduplicated
-    where cast(age as integer) between 0 and 120
+    where age between 0 and 120 and practice_id between 1 and 4 and age != 999
 )
 
 select
     patient_id,
     practice_id,
-    cast(age as integer) as age,
+    age,
     gender,
     registration_date,
     email,

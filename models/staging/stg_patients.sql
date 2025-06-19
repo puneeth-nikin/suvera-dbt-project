@@ -4,9 +4,18 @@ with source as (
 
 parsed as (
     select
-        cast(nullif(regexp_extract(data, '"patient_id": ([0-9]+)', 1), '') as integer) as patient_id,
-        cast(nullif(regexp_extract(data, '"practice_id": ([0-9]+)', 1), '') as integer) as practice_id,
-        cast(nullif(regexp_extract(data, '"age": ([0-9]+)', 1), '') as integer) as age,
+        case
+            when regexp_extract(data, '"patient_id": ([0-9]+)', 1) ~ '^[0-9]+$'
+            then cast(regexp_extract(data, '"patient_id": ([0-9]+)', 1) as integer)
+        end as patient_id,
+        case
+            when regexp_extract(data, '"practice_id": ([0-9]+)', 1) ~ '^[0-9]+$'
+            then cast(regexp_extract(data, '"practice_id": ([0-9]+)', 1) as integer)
+        end as practice_id,
+        case
+            when regexp_extract(data, '"age": ([0-9]+)', 1) ~ '^[0-9]+$'
+            then cast(regexp_extract(data, '"age": ([0-9]+)', 1) as integer)
+        end as age,
         regexp_extract(data, '"gender": "([^""]*)"', 1) as gender,
         cast(nullif(regexp_extract(data, '"registration_date": "([^"]+)"', 1), '') as date) as registration_date,
         regexp_extract(data, '"email": "([^"]+)"', 1) as email,
