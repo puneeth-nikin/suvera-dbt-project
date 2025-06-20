@@ -33,5 +33,5 @@ inactive_patients as (
     where fu.patient_id is null
 )
 
-select *
+select patient_id
 from inactive_patients

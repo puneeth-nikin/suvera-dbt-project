@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: mart_avg_age_by_practice
+    description: >
+      Calculates the average patient age per practice, excluding records where age is null.
+    columns:
+      - name: practice_id
+        description: "Unique identifier of the practice"
+      - name: avg_age
+        description: "Average age of valid patients registered to the practice"
+
+  - name: mart_age_groups_by_pcn
+    description: >
+      Groups patients into defined age bands (0 - 18, 19 - 35, 36 - 50, 51+) and aggregates counts by PCN.
+    columns:
+      - name: pcn_name
+        description: "Name of the Primary Care Network (PCN)"
+      - name: age_group
+        description: "Age band label the patient falls into"
+      - name: patient_count
+        description: "Number of patients in the age group per PCN"
+
+  - name: mart_patient_count_by_pcn
+    description: >
+      Total number of patients associated with each PCN.
+    columns:
+      - name: pcn_name
+        description: "Primary Care Network name"
+      - name: patient_count
+        description: "Total number of patients under the PCN"
+
+  - name: mart_hypertension_pct_by_practice
+    description: >
+      Calculates the percentage of patients with Hypertension per practice, based on condition tags.
+    columns:
+      - name: practice_id
+        description: "Practice ID"
+      - name: pct_hypertension
+        description: "Percentage of registered patients with Hypertension"
+
+  - name: mart_recent_activity_by_patient
+    description: >
+      Displays each patient's most recent activity date from the activity log.
+    columns:
+      - name: patient_id
+        description: "Unique patient identifier"
+      - name: latest_activity_date
+        description: "Date of most recent activity for the patient"
+
+  - name: mart_patients_inactive_3_months_after_first
+    description: >
+      Flags patients who had no follow-up activity for 3+ months after their first recorded activity.
+    columns:
+      - name: patient_id
+        description: "Unique ID of the patient"
+      - name: first_activity
+        description: "Date of the patient's first activity"
+      - name: last_activity
+        description: "Date of the most recent activity"
+

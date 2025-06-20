@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: cleaned_patients
+    description: >
+      Cleaned and deduplicated patient records. Each patient is associated with the most
+      recent valid registration (per practice), excluding invalid or missing practice IDs
+      and correcting invalid ages (setting out-of-bounds values to null).
+    columns:
+      - name: patient_id
+        description: "Unique ID for the patient"
+        tests:
+          - not_null
+
+      - name: practice_id
+        description: "Validated practice ID (must be 1 to 4)"
+        tests:
+          - not_null
+
+      - name: age
+        description: >
+          Age of the patient. Null if outside expected bounds (e.g., <0 or >120),
+          or if originally missing.
+
+      - name: gender
+        description: "Gender extracted from raw input"
+
+      - name: registration_date
+        description: "Most recent registration date with the given practice"
+        tests:
+          - not_null
+
+      - name: email
+        description: "Email address for contact"
+      
+
+      - name: phone
+        description: "Phone number for contact"
+
+
+      - name: conditions
+        description: "List of chronic or flagged conditions from the original input"
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - patient_id
+            - practice_id

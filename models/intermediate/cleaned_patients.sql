@@ -14,13 +14,16 @@ with deduplicated as (
 filtered as (
     select *
     from deduplicated
-    where age between 0 and 120 and practice_id between 1 and 4 and age != 999
+    where practice_id between 1 and 4
 )
 
 select
     patient_id,
     practice_id,
-    age,
+    case
+        when age between 0 and 120 then age
+        else null
+    end as age,
     gender,
     registration_date,
     email,

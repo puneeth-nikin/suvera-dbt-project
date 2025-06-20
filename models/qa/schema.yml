@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: qa_flagged_patients
+    description: >
+      Patients who were excluded from the cleaned dataset due to quality issues,
+      such as invalid age, missing or invalid practice ID, or duplicate records.
+      Includes a reason_flagged field to explain why each patient was excluded.
+    columns:
+      - name: patient_id
+        description: "Unique ID for the patient"
+
+      - name: practice_id
+        description: "Associated practice ID"
+
+      - name: age
+        description: "Age value that was flagged (if applicable)"
+
+      - name: gender
+        description: "Gender from raw input"
+
+      - name: registration_date
+        description: "Patient's registration date"
+
+      - name: email
+        description: "Email contact"
+
+      - name: phone
+        description: "Phone contact"
+
+      - name: conditions
+        description: "Array of conditions"
+
+      - name: reason_flagged
+        description: >
+          Explanation for why the patient record was excluded. e.g.
+          'invalid age', 'practice_id is null', 'practice_id is 999', or 'duplicate'
