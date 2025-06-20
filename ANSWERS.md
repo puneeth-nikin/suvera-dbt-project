@@ -138,20 +138,26 @@ SELECT * FROM mart_recent_activity_by_patient;
 
 ## Q7: Find patients who had no activity for 3 months after their first
 
-Use the model: `mart_patients_no_activity_3mo`
+Use the model: `mart_patients_inactive_3_months_after_first`
 
 ```sql
-SELECT * FROM mart_patients_no_activity_3mo;
+SELECT * FROM mart_patients_inactive_3_months_after_first;
 ```
 
-**Output:**
+**Sample Output:**
 
 ```text
-| patient_id | first_activity | last_activity |
-|------------|----------------|----------------|
-| 1003       | YYYY-MM-DD     | YYYY-MM-DD     |
+|    |   patient_id |
+|----|--------------|
+|  0 |         1193 |
+|  1 |         1045 |
+|  2 |         5923 |
+|  3 |         5526 |
+|  4 |         5774 |
+|  5 |         5974 |
+|  6 |         5318 |
+|  7 |         1088 |
+|  8 |         5675 |
+|  9 |         5289 |
 ```
 
----
-
-> Replace all `...` and placeholders with actual values based on notebook queries if including static answers.
