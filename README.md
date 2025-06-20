@@ -47,4 +47,4 @@ dbt docs serve
 
 ---
 
-This project follows DBT best practices and is production-grade and self-documenting with `dbt docs`.
+This project follows DBT best practices and self-documenting with `dbt docs`.
