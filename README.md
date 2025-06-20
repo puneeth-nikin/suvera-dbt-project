@@ -39,7 +39,6 @@ dbt docs serve
 | `models/qa/`           | Captures excluded records with reasons       |
 | `models/marts/`        | Final outputs to answer business questions   |
 | `seeds/`               | Raw input files (CSV)                        |
-| `scripts/notebooks/`   | Optional: query exploration in Jupyter       |
 | `ANSWERS.md`           | Answers to the questions using SQL outputs   |
 
 
