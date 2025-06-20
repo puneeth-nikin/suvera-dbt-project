@@ -1,6 +1,6 @@
 # Suvera DBT Project
 
-This project uses DBT and DuckDB to clean and analyse synthetic healthcare data for Suvera's data task. Python 3.13.5 (project developed and tested using this version)
+This project uses DBT and DuckDB to clean and analyse synthetic healthcare data for Suvera's data task.  Project developed and tested using Python 3.13.5 version
 
 ## Answers
 
